@@ -11,3 +11,22 @@
 		> so this is why implementation of template need to be in header, cause if in .cpp the compiler will have a linker error
 	* template can be access using (::) means use the global namespace, not the std::swap(this is in <algorithm>)
 		> :: means global namespace
+
+### Iter : making a function that applies another function to every element in array
+
+### Array : Can make a Class template, Got 5 stuff to consider:
+	> Constructor that creates empty array, that creates an unsigned int, and a copy constructor
+	> Copy assignment operator
+	> Subscript Operator [] : can set the value and get value
+	> Size function that return the number of element in the array
+
+	* Critical Requirement
+		> MUST use new[] not new, why?
+			> because only new will create a (single object) while new[] will create and allocate the array correctly
+		> No Preventive Allocation
+			> need to use new T[n]
+			> no pre allocation [100]
+		> Deep copy
+			> so create a new totally different array but with same element
+			> be independent!!
+		> Throw exceptions for out of bound
